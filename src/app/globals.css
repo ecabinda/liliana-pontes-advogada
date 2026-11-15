@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold-primary: #C5A46D;
+    --gold-light: #DFC99E;
+    --gold-dark: #8E6C38;
+    --legal-dark: #14110F;
+    --legal-surface: #1E1A17;
+    --legal-cream: #FAF8F5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #2C2520;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #C5A46D;
+    color: #14110F;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1613;
+}
+::-webkit-scrollbar-thumb {
+  background: #524840;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A46D;
+}
+
+/* Luxury Gold & Typography Utilities */
+.font-serif-legal {
+  font-family: var(--font-cormorant), 'Playfair Display', Georgia, serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E7C4 0%, #C8A366 50%, #997438 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFCA9B 0%, #C5A46D 50%, #9E7D46 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #DFCA9B, #8E6C38) 1;
+}
+
+.dark-gradient-bg {
+  background: radial-gradient(circle at 75% 25%, #2A2420 0%, #151210 60%, #0D0B0A 100%);
+}
+
+/* Glassmorphism */
+.glass-header {
+  background: rgba(20, 17, 15, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(197, 164, 109, 0.15);
+}
+
+.glass-card-dark {
+  background: rgba(30, 26, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 164, 109, 0.18);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 210, 195, 0.8);
+}
+
+/* Animations inspired by naocodei.com/free-code/ */
+@keyframes floatScale {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes lightPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes shimmerGleam {
+  0% {
+    left: -150%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+@keyframes pulseBorder {
+  0%, 100% {
+    border-color: rgba(197, 164, 109, 0.25);
+    box-shadow: 0 0 0 0 rgba(197, 164, 109, 0.2);
+  }
+  50% {
+    border-color: rgba(197, 164, 109, 0.65);
+    box-shadow: 0 0 20px 2px rgba(197, 164, 109, 0.25);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float-scale {
+  animation: floatScale 6s ease-in-out infinite;
+}
+
+.animate-light-pulse {
+  animation: lightPulse 5s ease-in-out infinite alternate;
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 3s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Shimmer Button Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: shimmerGleam 4.5s infinite ease-in-out;
+}
+
+/* Interactive Card Spotlight Effect */
+.card-spotlight {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-spotlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(20, 17, 15, 0.12), 0 0 25px 0 rgba(197, 164, 109, 0.15);
+}
+
+/* Curved Mask / Cutout matching reference */
+.curved-bottom-hero {
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+}
+
+@media (min-width: 1024px) {
+  .curved-bottom-hero {
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+  }
+}
