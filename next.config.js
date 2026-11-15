@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
 const repo = 'liliana-pontes-advogada';
 
 const nextConfig = {
   output: 'export',
-  basePath: isGithubActions ? `/${repo}` : '',
+  basePath: `/${repo}`,
+  trailingSlash: true,
   reactStrictMode: true,
   images: {
     unoptimized: true,
