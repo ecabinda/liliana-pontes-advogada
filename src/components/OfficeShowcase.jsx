@@ -3,41 +3,42 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { MapPin, Globe, Shield, Sparkles, Building, Phone, Mail, Clock } from 'lucide-react';
+import { getAssetPath } from '../utils/basePath';
 
 export default function OfficeShowcase() {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const gallery = [
     {
-      src: '/images/fachada-escritorio.png',
+      src: getAssetPath('/images/fachada-escritorio.png'),
       title: 'Fachada & Escritório em Lisboa',
       subtitle: 'Av. Dom João II 2, Parque das Nações',
       desc: 'Localização privilegiada na zona nobre de Lisboa, com acessos diretos, facilidade de estacionamento e transportes.',
       tag: 'Sede Lisboa'
     },
     {
-      src: '/images/porta-logotipo.png',
+      src: getAssetPath('/images/porta-logotipo.png'),
       title: 'Identidade & Sinalética Oficial',
       subtitle: 'Entrada Principal e Gabinete',
       desc: 'Transparência, formalidade e dedicação exclusiva. Atendimento presencial sob marcação prévia para total discrição.',
       tag: 'Gabinete Oficial'
     },
     {
-      src: '/images/sala-reunioes-1.png',
+      src: getAssetPath('/images/sala-reunioes-1.png'),
       title: 'Sala de Conferências & Reuniões',
       subtitle: 'Consultas Jurídicas Confidenciais',
       desc: 'Espaço requintado preparado para acolhimento de clientes, negociações estratégicas e reuniões de trabalho em sigilo absoluto.',
       tag: 'Privacidade'
     },
     {
-      src: '/images/gabinete-privado.png',
+      src: getAssetPath('/images/gabinete-privado.png'),
       title: 'Espaço Executivo de Trabalho',
       subtitle: 'Ambiente de Análise e Estudo Forense',
       desc: 'Estrutura técnica moderna com ferramentas digitais avançadas para acompanhamento rigoroso de processos e litígios.',
       tag: 'Infraestrutura'
     },
     {
-      src: '/images/polos-internacionais.png',
+      src: getAssetPath('/images/polos-internacionais.png'),
       title: 'Rede de Polos & Parcerias Internacionais',
       subtitle: 'Portugal, França, Alemanha e Brasil',
       desc: 'Capacidade de assistência jurídica além-fronteiras com correspondentes e representações em cidades estratégicas mundiais.',

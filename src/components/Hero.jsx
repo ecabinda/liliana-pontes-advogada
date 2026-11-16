@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, Star, Phone, ShieldCheck, MapPin, CheckCircle2, Scale, Calendar, Clock, Sparkles } from 'lucide-react';
+import { getAssetPath } from '../utils/basePath';
 
 export default function Hero({ onOpenBooking }) {
   return (
@@ -114,7 +115,7 @@ export default function Hero({ onOpenBooking }) {
               {/* Authentic Photo of the Law Office in Lisbon */}
               <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-gold-400/20 bg-legal-950 group/img">
                 <Image
-                  src="/images/sala-reunioes-1.png"
+                  src={getAssetPath('/images/sala-reunioes-1.png')}
                   alt="Gabinete de Advocacia Liliana Pontes - Lisboa Parque das Nações"
                   fill
                   priority

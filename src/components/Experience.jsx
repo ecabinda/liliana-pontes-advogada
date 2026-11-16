@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Scale, Award, Shield, Users, Clock, CheckCircle, Star, ArrowUpRight } from 'lucide-react';
+import { getAssetPath } from '../utils/basePath';
 
 export default function Experience({ onOpenBooking }) {
   const stats = [
@@ -182,7 +183,7 @@ export default function Experience({ onOpenBooking }) {
               <div className="group relative rounded-2xl overflow-hidden border border-legal-200 shadow-sm bg-legal-100">
                 <div className="relative h-44 w-full">
                   <Image
-                    src="/images/sala-reunioes-1.png"
+                    src={getAssetPath('/images/sala-reunioes-1.png')}
                     alt="Sala de Reuniões Privada - Liliana Pontes Advogada Lisboa"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -198,7 +199,7 @@ export default function Experience({ onOpenBooking }) {
               <div className="group relative rounded-2xl overflow-hidden border border-legal-200 shadow-sm bg-legal-100">
                 <div className="relative h-44 w-full">
                   <Image
-                    src="/images/gabinete-privado.png"
+                    src={getAssetPath('/images/gabinete-privado.png')}
                     alt="Espaço Executivo de Trabalho - Liliana Pontes Advogada"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
